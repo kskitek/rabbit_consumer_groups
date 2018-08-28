@@ -1,0 +1,15 @@
+version: '3'
+services:
+  rabbit_cg:
+    image: kskitek/rabbit_consumer_groups:latest
+    ports:
+    - 8080:8080
+    env_file:
+      config/service.env
+
+  rabbit:
+    image: rabbitmq:3.7-alpine
+    ports:
+    - 5672:5672
+    env_file:
+      config/rabbitmq.env
